@@ -10,9 +10,12 @@
         body { margin: 0; font-family: 'Poppins', sans-serif; color: var(--white); background: var(--black) url('Background.jpg') fixed center/cover; background-repeat: no-repeat; }
         .overlay { background: rgba(0,0,0,0.85); min-height: 100vh; }
         .hidden { display: none !important; }
+        
+        /* HEADER */
         header { padding: 10px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--gold); background: rgba(0,0,0,0.95); position: sticky; top: 0; z-index: 1000; }
-        .header-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; }
+        .header-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; cursor: pointer; }
         .logo-img { height: 70px; width: auto; cursor: pointer; }
+        
         .benefits-hero { text-align: center; padding: 60px 20px; }
         .benefits-hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--gold); margin: 0; }
         .benefit-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; padding: 40px 20px; max-width: 1200px; margin: auto; gap: 40px; }
@@ -20,30 +23,52 @@
         .benefit-img-main { flex: 1; min-width: 300px; max-width: 500px; border: 2px solid var(--gold); border-radius: 15px; overflow: hidden; background: #111; }
         .benefit-img-main img { width: 100%; display: block; }
         .benefit-info-img { width: 100%; margin-top: 20px; border-radius: 10px; border: 1px solid rgba(212,175,55,0.3); }
-        .benefit-text { flex: 1; min-width: 300px; }
-        .benefit-text h2 { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 2.2rem; margin-bottom: 20px; }
-        .benefit-list { list-style: none; padding: 0; }
-        .benefit-list li { margin-bottom: 15px; padding-left: 25px; position: relative; font-size: 1rem; line-height: 1.5; }
-        .benefit-list li::before { content: "✔"; position: absolute; left: 0; color: var(--gold); font-weight: bold; }
-        .cta-btn { background: var(--gold); color: black; padding: 18px 50px; border: none; border-radius: 5px; font-weight: bold; font-size: 1.2rem; cursor: pointer; transition: 0.3s; text-transform: uppercase; }
-        .cta-btn:hover { background: white; transform: scale(1.05); }
+        
+        /* BUTTONS & UI */
+        .cta-btn { background: var(--gold); color: black; padding: 18px 50px; border: none; border-radius: 5px; font-weight: bold; font-size: 1.2rem; cursor: pointer; transition: 0.3s; text-transform: uppercase; width: 100%; box-sizing: border-box; }
+        .cta-btn:hover { background: white; transform: scale(1.02); }
+        .back-btn { background: #444; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-bottom: 20px; }
+        
         .container { max-width: 600px; margin: 20px auto; padding: 25px; background: var(--gray); border-radius: 15px; border: 1px solid var(--gold); }
         .card { background: rgba(255,255,255,0.05); padding: 20px; border: 1px solid #444; border-radius: 10px; margin-bottom: 15px; cursor: pointer; }
         .price { color: var(--gold); font-weight: bold; font-size: 1.3rem; }
+        
         input, select, textarea { width: 100%; padding: 12px; margin: 10px 0; border-radius: 5px; border: 1px solid #444; background: #111; color: white; box-sizing: border-box; font-family: inherit; }
         label { font-size: 0.8rem; color: var(--gold); font-weight: 600; text-transform: uppercase; }
+        
+        .flavor-row { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #333; }
+        .qty-btn { width: 40px; height: 40px; background: var(--gold); border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
+        
         .summary-box { background: #000; padding: 20px; border-radius: 10px; border: 1px solid var(--gold); margin-top: 20px; }
         .total-line { border-top: 2px solid var(--gold); padding-top: 15px; font-size: 1.5rem; font-weight: bold; color: var(--gold); }
-        .note { font-size: 0.8rem; font-style: italic; color: #aaa; margin-top: 10px; text-align: center; }
-        @media (max-width: 768px) { .header-title { font-size: 1rem; } .benefits-hero h1 { font-size: 2.5rem; } }
+        
+        .consent-box { background: rgba(212, 175, 55, 0.1); padding: 15px; border-radius: 8px; border: 1px dashed var(--gold); margin: 20px 0; font-size: 0.85rem; }
+        .consent-box input { width: auto; margin-right: 10px; cursor: pointer; }
+
+        /* MODAL POPUP */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; }
+        .modal-content { background: var(--gray); border: 2px solid var(--gold); border-radius: 15px; padding: 30px; max-width: 500px; text-align: center; }
+        .modal-content h3 { color: var(--gold); font-family: 'Playfair Display'; font-size: 1.8rem; margin-top: 0; }
+        .modal-content p { font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px; }
     </style>
 </head>
 <body>
 <div class="overlay">
     <header>
-        <div class="header-title">Shatter Reserve</div>
+        <div class="header-title" onclick="location.reload()">Shatter Reserve</div>
         <img src="Logo%20Trans.png" alt="Shatter Reserve Logo" class="logo-img" onclick="location.reload()">
     </header>
+
+    <!-- WARNING MODAL -->
+    <div id="manual-modal" class="hidden modal-overlay">
+        <div class="modal-content">
+            <h3>Ordering Notice</h3>
+            <p>You have opted out of automatic order syncing. You will now be routed to our Facebook page to place your order manually.</p>
+            <p style="color: var(--gold); font-weight: bold;">Please note: An admin will need to manually record your details, and it will take a while to confirm your order.</p>
+            <button class="cta-btn" onclick="proceedManual()">CONTINUE TO FACEBOOK</button>
+            <p style="margin-top: 15px; cursor: pointer; text-decoration: underline;" onclick="closeModal()">Go back and sync order</p>
+        </div>
+    </div>
 
     <div id="home-view">
         <section class="benefits-hero">
@@ -51,7 +76,6 @@
             <p style="letter-spacing: 4px; color: var(--gold);">THE ULTIMATE GUILT-FREE CRUNCH</p>
         </section>
 
-        <!-- FITNESS SECTION -->
         <div class="benefit-row">
             <div class="benefit-img-main"><img src="Muscle.jpg" alt="Muscle Recovery"></div>
             <div class="benefit-text">
@@ -66,7 +90,6 @@
             </div>
         </div>
 
-        <!-- WELLNESS SECTION -->
         <div class="benefit-row">
             <div class="benefit-img-main"><img src="Wellness.jpg" alt="Daily Wellness"></div>
             <div class="benefit-text">
@@ -82,88 +105,114 @@
         </div>
 
         <section style="text-align: center; padding: 60px 20px;">
-            <button class="cta-btn" onclick="showView('order')">ORDER YOUR PACK NOW</button>
+            <button class="cta-btn" style="width: auto;" onclick="showView('order')">ORDER YOUR PACK NOW</button>
         </section>
     </div>
 
     <div id="order-view" class="hidden">
+        <!-- STEP 1 -->
         <div id="step-1" class="container">
+            <button class="back-btn" onclick="location.reload()">← Back to Home</button>
             <h2>Step 1: Select Your Pack</h2>
             <div class="card" onclick="selectPack('Solo Pack', 1, 130)"><h3>Solo Pack</h3><p>1 Bag (50g)</p><span class="price">₱130</span></div>
-            <div class="card" onclick="selectPack('Barkada Pack', 6, 650)"><h3>Barkada Pack</h3><p>Buy 5, Get 1 FREE (6 bags)</p><span class="price">₱650</span></div>
-            <div class="card" onclick="selectPack('Family Pack', 12, 1300)"><h3>Family Pack</h3><p>Buy 10, Get 2 FREE (12 bags)</p><span class="price">₱1,300</span></div>
+            <div class="card" onclick="selectPack('Barkada Pack', 6, 650)"><h3>Barkada Pack</h3><p>5+1 FREE (6 bags)</p><span class="price">₱650</span></div>
+            <div class="card" onclick="selectPack('Family Pack', 12, 1300)"><h3>Family Pack</h3><p>10+2 FREE (12 bags)</p><span class="price">₱1,300</span></div>
             <div class="card" onclick="selectPack('Custom Order', 0, 130)"><h3>Custom Order</h3><p>Choose any quantity</p><span class="price">₱130 / bag</span></div>
-            <button class="cta-btn" style="background:#444; color:white; width: 100%; margin-top:10px;" onclick="location.reload()">Back</button>
         </div>
 
+        <!-- STEP 2 -->
         <div id="step-2" class="container hidden">
+            <button class="back-btn" onclick="showStep(1)">← Back to Step 1</button>
             <h2>Step 2: Choose Flavors</h2>
             <p id="pack-summary" style="text-align:center; color:var(--gold); font-weight: bold;"></p>
             <div id="flavor-container"></div>
             <div style="text-align:center; margin-top:20px;">
                 <p>Selection: <span id="total-selected" style="color:var(--gold); font-weight:bold;">0</span> / <span id="target-total"></span></p>
-                <button class="cta-btn" onclick="validateFlavors()">PROCEED TO SHIPPING</button>
+                <button class="cta-btn" onclick="validateFlavors()">CONTINUE</button>
             </div>
         </div>
 
+        <!-- STEP 3 -->
         <div id="step-3" class="container hidden">
-            <h2>Step 3: Delivery Details</h2>
-            <p class="note" style="color:var(--gold);">Dispatching from: Pasig City, Metro Manila</p>
+            <button class="back-btn" onclick="showStep(2)">← Back to Flavors</button>
+            <h2>Step 3: Delivery & Checkout</h2>
             <label>Full Name</label><input type="text" id="cust-name">
             <label>Complete Address</label><textarea id="cust-address" rows="2"></textarea>
             <label>Google Maps Pin / Landmark</label><input type="text" id="cust-pin">
             <label>Phone Number</label><input type="text" id="cust-phone">
             
-            <label>Destination Region</label>
+            <label>Region</label>
             <select id="region" onchange="calculateShipping()">
                 <option value="ncr">Metro Manila (NCR)</option>
                 <option value="luzon">Luzon (Provincial)</option>
                 <option value="visayas">Visayas</option>
                 <option value="mindanao">Mindanao</option>
             </select>
-            
             <label>Shipping Method</label>
             <select id="ship-method" onchange="calculateShipping()"></select>
-            
-            <div id="shipping-note" style="font-size:0.8rem; text-align:center; color:#aaa; margin:10px 0;"></div>
+            <label>Payment Method</label>
+            <select id="pay-method">
+                <option value="COD">Cash on Delivery (COD)</option>
+                <option value="Online">Online (GCash / Bank Transfer)</option>
+            </select>
+
+            <div class="consent-box">
+                <input type="checkbox" id="fb-consent" checked>
+                <span><strong>Sync with Facebook:</strong> Process my order automatically for faster confirmation. (Uncheck for manual order)</span>
+            </div>
             
             <div class="summary-box">
                 <div style="display:flex; justify-content:space-between;"><span>Subtotal:</span><span id="sum-subtotal">₱0</span></div>
-                <div style="display:flex; justify-content:space-between;"><span>Shipping Fee:</span><span id="sum-ship">₱0</span></div>
+                <div style="display:flex; justify-content:space-between;"><span>Shipping:</span><span id="sum-ship">₱0</span></div>
                 <div style="display:flex; justify-content:space-between;"><span>Discount:</span><span id="sum-discount">-₱0</span></div>
-                <div class="total-line" style="display:flex; justify-content:space-between;"><span>GRAND TOTAL:</span><span id="sum-total">₱0</span></div>
+                <div class="total-line" style="display:flex; justify-content:space-between;"><span>TOTAL:</span><span id="sum-total">₱0</span></div>
             </div>
-            <p class="note">⚠️ Reminder: For Express delivery, balance of rider fee is paid upon arrival.</p>
-            <button class="cta-btn" onclick="finalizeOrder()">SUBMIT ORDER VIA MESSENGER</button>
+            <button class="cta-btn" style="margin-top:20px;" onclick="finalizeOrder()">PLACE ORDER NOW</button>
         </div>
     </div>
 </div>
 
 <script>
     let order = { pack: '', targetQty: 0, subtotal: 0, flavors: { Original: 0, Barbeque: 0, CheddarSourCream: 0, Cheese: 0 } };
+    const fbID = "61589629505231";
+
     function showView(v) { 
         document.getElementById('home-view').classList.toggle('hidden', v !== 'home');
         document.getElementById('order-view').classList.toggle('hidden', v !== 'order');
         if(v==='order') showStep(1);
     }
+
+    function showStep(s) {
+        [1,2,3].forEach(n => document.getElementById(`step-${n}`).classList.add('hidden'));
+        document.getElementById(`step-${s}`).classList.remove('hidden');
+        window.scrollTo(0,0);
+    }
+
     function selectPack(n, q, p) { 
         order.pack = n; order.targetQty = q; order.subtotal = p;
         document.getElementById('target-total').innerText = q > 0 ? q : '∞';
         document.getElementById('pack-summary').innerText = n;
         renderFlavors(); showStep(2);
     }
+
     function renderFlavors() {
-        const list = ['Original', 'Barbeque', 'Cheddar SourCream', 'Cheese'];
+        const list = [
+            {id: 'Original', label: 'Original'},
+            {id: 'Barbeque', label: 'Barbeque'},
+            {id: 'CheddarSourCream', label: 'Cheddar Sour Cream'},
+            {id: 'Cheese', label: 'Cheese'}
+        ];
         let html = '';
         list.forEach(f => {
-            html += `<div class="flavor-row"><span>${f.replace(/([A-Z])/g, ' $1')}</span><div class="qty-controls">
-                <button class="qty-btn" onclick="changeQty('${f}', -1)">-</button>
-                <span id="qty-${f}" style="margin:0 15px; font-weight:bold;">0</span>
-                <button class="qty-btn" onclick="changeQty('${f}', 1)">+</button>
+            html += `<div class="flavor-row"><span>${f.label}</span><div class="qty-controls">
+                <button class="qty-btn" onclick="changeQty('${f.id}', -1)">-</button>
+                <span id="qty-${f.id}" style="margin:0 15px; font-weight:bold;">${order.flavors[f.id]}</span>
+                <button class="qty-btn" onclick="changeQty('${f.id}', 1)">+</button>
             </div></div>`;
         });
         document.getElementById('flavor-container').innerHTML = html;
     }
+
     function changeQty(f, d) {
         let cur = Object.values(order.flavors).reduce((a, b) => a + b, 0);
         if (order.targetQty > 0 && d > 0 && cur >= order.targetQty) return;
@@ -173,6 +222,7 @@
             document.getElementById('total-selected').innerText = cur + d;
         }
     }
+
     function validateFlavors() {
         let total = Object.values(order.flavors).reduce((a, b) => a + b, 0);
         if (order.targetQty > 0 && total !== order.targetQty) return alert(`Select exactly ${order.targetQty} bags.`);
@@ -180,59 +230,50 @@
         if (order.pack === 'Custom Order') order.subtotal = total * 130;
         showStep(3); calculateShipping();
     }
+
     function calculateShipping() {
         const reg = document.getElementById('region').value;
         const meth = document.getElementById('ship-method');
         const sub = order.subtotal;
-        let ship = 0, disc = 0, note = '';
-        
-        if (reg === 'ncr') { 
-            meth.innerHTML = `<option value="std">J&T Pasig to NCR (1-2 Days)</option><option value="exp">Same-Day Express (Lalamove/Grab)</option>`; 
-        } else { 
-            meth.innerHTML = `<option value="std">J&T Provincial Standard</option>`; 
-        }
-        
-        const mVal = meth.value;
+        let ship = 0, disc = 0;
+        if (reg === 'ncr') { meth.innerHTML = `<option value="std">J&T Pasig to NCR</option><option value="exp">Same-Day Express</option>`; } 
+        else { meth.innerHTML = `<option value="std">J&T Provincial</option>`; }
         const totalBags = Object.values(order.flavors).reduce((a, b) => a + b, 0);
-        let weightClass = totalBags < 6 ? 1 : (totalBags < 12 ? 2.5 : 4.5);
-
+        let weight = totalBags < 6 ? 1 : (totalBags < 12 ? 2.5 : 4.5);
         if (reg === 'ncr') {
-            if (mVal === 'exp') {
-                if (sub >= 650) disc = 50;
-                note = "Express Shipping: Warehouse in Pasig. ₱50 Subsidy if subtotal ≥ ₱650.";
-            } else {
-                // PASIG TO NCR RATES
-                ship = weightClass === 1 ? 80 : (weightClass === 2.5 ? 120 : 180);
-                if (sub >= 650) { ship = 0; note = "Metro Manila Free Shipping Applied!"; }
-            }
+            if (meth.value === 'exp') { if (sub >= 650) disc = 50; } 
+            else { ship = weight === 1 ? 80 : (weight === 2.5 ? 120 : 180); if (sub >= 650) ship = 0; }
         } else {
-            // PROVINCIAL RATES STARTING FROM PASIG
             const rates = { luzon: [140, 180, 250], visayas: [180, 220, 350], mindanao: [195, 240, 370] };
-            ship = rates[reg][weightClass === 1 ? 0 : (weightClass === 2.5 ? 1 : 2)];
-            if (sub >= 3900) ship = 0;
-            else if (sub >= 1300) disc = 150;
-            else if (sub >= 650) disc = 100;
-            note = ship === 0 ? "PROVINCIAL FREE SHIPPING!" : "Provincial Volumetric Rate Applied.";
+            ship = rates[reg][weight === 1 ? 0 : (weight === 2.5 ? 1 : 2)];
+            if (sub >= 3900) ship = 0; else if (sub >= 1300) disc = 150; else if (sub >= 650) disc = 100;
         }
-        
         document.getElementById('sum-subtotal').innerText = `₱${sub}`;
         document.getElementById('sum-ship').innerText = ship === 0 ? "FREE" : `₱${ship}`;
         document.getElementById('sum-discount').innerText = `-₱${disc}`;
         document.getElementById('sum-total').innerText = `₱${sub + ship - disc}`;
-        document.getElementById('shipping-note').innerHTML = note;
     }
+
     function finalizeOrder() {
+        const consent = document.getElementById('fb-consent').checked;
+        if (!consent) {
+            document.getElementById('manual-modal').classList.remove('hidden');
+            return;
+        }
         const name = document.getElementById('cust-name').value;
-        if (!name || !document.getElementById('cust-phone').value) return alert('Fill in Name and Phone Number.');
+        if (!name || !document.getElementById('cust-phone').value) return alert('Please fill in Name and Phone Number.');
         let flavs = "";
-        for (let f in order.flavors) if (order.flavors[f] > 0) flavs += `- ${f}: ${order.flavors[f]}\n`;
-        let sum = `✨ SHATTER RESERVE ORDER ✨\n\n👤 NAME: ${name}\n📞 PHONE: ${document.getElementById('cust-phone').value}\n📍 ADDR: ${document.getElementById('cust-address').value}\n📌 PIN: ${document.getElementById('cust-pin').value}\n\n📦 ITEMS:\n${flavs}\n🚚 SHIP: ${document.getElementById('ship-method').options[document.getElementById('ship-method').selectedIndex].text}\n💰 TOTAL: ${document.getElementById('sum-total').innerText}`;
-        window.location.href = `https://m.me/61589629505231?text=${encodeURIComponent(sum)}`;
+        for (let f in order.flavors) if (order.flavors[f] > 0) flavs += `- ${f.replace(/([A-Z])/g, ' $1')}: ${order.flavors[f]}\n`;
+        const sum = `✨ SHATTER RESERVE ORDER ✨\n\n👤 NAME: ${name}\n📞 PHONE: ${document.getElementById('cust-phone').value}\n📍 ADDR: ${document.getElementById('cust-address').value}\n📌 PIN: ${document.getElementById('cust-pin').value}\n\n📦 ITEMS:\n${flavs}\n🚚 SHIP: ${document.getElementById('ship-method').options[document.getElementById('ship-method').selectedIndex].text}\n💳 PAYMENT: ${document.getElementById('pay-method').value}\n💰 TOTAL: ${document.getElementById('sum-total').innerText}`;
+        window.location.href = `https://m.me/${fbID}?text=${encodeURIComponent(sum)}`;
     }
-    function showStep(s) {
-        [1,2,3].forEach(n => document.getElementById(`step-${n}`).classList.add('hidden'));
-        document.getElementById(`step-${s}`).classList.remove('hidden');
-        window.scrollTo(0,0);
+
+    function proceedManual() {
+        window.location.href = `https://m.me/${fbID}`;
+    }
+
+    function closeModal() {
+        document.getElementById('manual-modal').classList.add('hidden');
     }
 </script>
 </body>
