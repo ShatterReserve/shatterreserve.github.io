@@ -18,13 +18,10 @@
         /* ONE SCROLL BENEFIT LAYOUT */
         .benefits-container { max-width: 1100px; margin: 0 auto; padding: 20px; display: flex; flex-direction: column; gap: 15px; }
         .benefit-row { display: flex; align-items: center; justify-content: space-between; gap: 30px; min-height: 250px; }
-        
-        /* Muscle Section: Text Left, Image Right */
-        /* Wellness Section: Image Left, Text Right (Handled by Row-Reverse) */
         .row-reverse { flex-direction: row-reverse; }
 
         .benefit-img-wrapper { flex: 1; text-align: center; }
-        .benefit-img-wrapper img { max-width: 100%; max-height: 220px; border: 1px solid var(--gold); border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+        .benefit-img-wrapper img { max-width: 100%; max-height: 220px; border: 1px solid var(--gold); border-radius: 10px; }
         
         .benefit-text-wrapper { flex: 1.2; }
         .benefit-text-wrapper h2 { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1.6rem; margin: 0 0 10px 0; }
@@ -32,19 +29,19 @@
         .benefit-list li { margin-bottom: 8px; font-size: 0.85rem; line-height: 1.3; padding-left: 20px; position: relative; }
         .benefit-list li::before { content: "✔"; position: absolute; left: 0; color: var(--gold); font-weight: bold; }
 
-        /* BOTTOM INFOGRAPHICS SIDE-BY-SIDE */
         .infographics-container { display: flex; justify-content: center; gap: 20px; margin-top: 10px; }
         .infographic-box { flex: 1; max-width: 300px; }
         .infographic-box img { width: 100%; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.3); }
 
-        /* BUTTONS & MODALS */
+        /* CHECKOUT UI */
         .cta-btn { background: var(--gold); color: black; padding: 15px 40px; border: none; border-radius: 5px; font-weight: bold; font-size: 1.1rem; cursor: pointer; transition: 0.3s; text-transform: uppercase; width: 100%; }
-        .cta-btn:hover { background: white; transform: scale(1.02); }
-        
         .container { max-width: 600px; margin: 20px auto; padding: 25px; background: var(--gray); border-radius: 15px; border: 1px solid var(--gold); }
         .card { background: rgba(255,255,255,0.05); padding: 20px; border: 1px solid #444; border-radius: 10px; margin-bottom: 15px; cursor: pointer; }
-        input, select, textarea { width: 100%; padding: 12px; margin: 10px 0; border-radius: 5px; border: 1px solid #444; background: #111; color: white; box-sizing: border-box; font-family: inherit; }
+        input, select, textarea { width: 100%; padding: 12px; margin: 10px 0; border-radius: 5px; border: 1px solid #444; background: #111; color: white; box-sizing: border-box; font-family: inherit; font-size: 1rem; }
         
+        .flavor-row { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #333; }
+        .qty-btn { width: 40px; height: 40px; background: var(--gold); border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
+
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 20px; }
         .modal-content { background: var(--gray); border: 2px solid var(--gold); border-radius: 15px; padding: 30px; max-width: 450px; text-align: center; }
 
@@ -71,11 +68,9 @@
         </div>
     </div>
 
-    <!-- HOME VIEW: BENEFITS FIRST -->
+    <!-- HOME VIEW -->
     <div id="home-view">
         <div class="benefits-container">
-            
-            <!-- FITNESS: Text Left, Image Right -->
             <div class="benefit-row">
                 <div class="benefit-text-wrapper">
                     <h2>For Fitness Enthusiasts</h2>
@@ -86,12 +81,9 @@
                         <li>Maintains Performance Electrolytes</li>
                     </ul>
                 </div>
-                <div class="benefit-img-wrapper">
-                    <img src="Muscle.jpg" alt="Muscle Recovery">
-                </div>
+                <div class="benefit-img-wrapper"><img src="Muscle.jpg" alt="Muscle"></div>
             </div>
 
-            <!-- WELLNESS: Image Left, Text Right -->
             <div class="benefit-row row-reverse">
                 <div class="benefit-text-wrapper">
                     <h2>Health & Wellness</h2>
@@ -102,15 +94,12 @@
                         <li>Essential B-Vitamins for Focus</li>
                     </ul>
                 </div>
-                <div class="benefit-img-wrapper">
-                    <img src="Wellness.jpg" alt="Daily Wellness">
-                </div>
+                <div class="benefit-img-wrapper"><img src="Wellness.jpg" alt="Wellness"></div>
             </div>
 
-            <!-- INFOGRAPHICS SIDE-BY-SIDE -->
             <div class="infographics-container">
-                <div class="infographic-box"><img src="Benefits%201.png" alt="Fitness Info"></div>
-                <div class="infographic-box"><img src="Benefits%202.png" alt="Wellness Info"></div>
+                <div class="infographic-box"><img src="Benefits%201.png"></div>
+                <div class="infographic-box"><img src="Benefits%202.png"></div>
             </div>
 
             <div style="text-align: center; margin-top: 10px;">
@@ -119,7 +108,7 @@
         </div>
     </div>
 
-    <!-- ORDERING VIEW -->
+    <!-- ORDER VIEW -->
     <div id="order-view" class="hidden">
         <div id="step-1" class="container">
             <button style="background:none; border:none; color:var(--gold); cursor:pointer;" onclick="location.reload()">← Back to Home</button>
@@ -133,7 +122,6 @@
         <div id="step-2" class="container hidden">
             <button style="background:none; border:none; color:var(--gold); cursor:pointer;" onclick="showStep(1)">← Back</button>
             <h2>Choose Flavors</h2>
-            <p id="pack-summary" style="text-align:center; color:var(--gold); font-weight:bold;"></p>
             <div id="flavor-container"></div>
             <div style="text-align:center; margin-top:20px;">
                 <p>Selected: <span id="total-selected" style="color:var(--gold); font-weight:bold;">0</span> / <span id="target-total"></span></p>
@@ -148,21 +136,30 @@
             <textarea id="cust-address" rows="2" placeholder="Complete Address"></textarea>
             <input type="text" id="cust-pin" placeholder="Landmark / Pin Location">
             <input type="text" id="cust-phone" placeholder="Phone Number">
-            <select id="region" onchange="calculateShipping()">
+            
+            <label style="color:var(--gold); font-size:0.8rem;">REGION</label>
+            <select id="region" onchange="updateMethods()">
                 <option value="ncr">Metro Manila (NCR)</option>
                 <option value="luzon">Luzon</option>
                 <option value="visayas">Visayas</option>
                 <option value="mindanao">Mindanao</option>
             </select>
+            
+            <label style="color:var(--gold); font-size:0.8rem;">SHIPPING METHOD</label>
             <select id="ship-method" onchange="calculateShipping()"></select>
+            
+            <label style="color:var(--gold); font-size:0.8rem;">PAYMENT</label>
             <select id="pay-method"><option value="COD">Cash on Delivery</option><option value="Online">Online Payment</option></select>
             
             <div style="font-size:0.8rem; margin:15px 0; border:1px dashed var(--gold); padding:10px;">
-                <input type="checkbox" id="fb-consent" checked style="width:auto;"> I agree to sync my order to Facebook for faster processing.
+                <input type="checkbox" id="fb-consent" checked style="width:auto;"> I agree to sync my order to Facebook.
             </div>
 
             <div id="checkout-summary" style="background:#000; padding:15px; border-radius:8px;">
-                <div style="display:flex; justify-content:space-between;"><span>Total:</span><span id="sum-total" style="color:var(--gold); font-weight:bold;">₱0</span></div>
+                <div style="display:flex; justify-content:space-between; margin-bottom:5px;"><span>Subtotal:</span><span id="sum-sub">₱0</span></div>
+                <div style="display:flex; justify-content:space-between; margin-bottom:5px;"><span>Shipping:</span><span id="sum-ship">₱0</span></div>
+                <div style="display:flex; justify-content:space-between; margin-bottom:5px;"><span>Discount:</span><span id="sum-disc">₱0</span></div>
+                <div style="display:flex; justify-content:space-between; border-top:1px solid #333; padding-top:5px; font-weight:bold;"><span>Total:</span><span id="sum-total" style="color:var(--gold);">₱0</span></div>
             </div>
             <button class="cta-btn" style="margin-top:15px;" onclick="finalizeOrder()">PLACE ORDER NOW</button>
         </div>
@@ -182,13 +179,12 @@
     function showStep(s) {
         [1,2,3].forEach(n => document.getElementById(`step-${n}`).classList.add('hidden'));
         document.getElementById(`step-${s}`).classList.remove('hidden');
-        window.scrollTo(0,0);
+        if(s === 3) updateMethods();
     }
 
     function selectPack(n, q, p) { 
         order.pack = n; order.targetQty = q; order.subtotal = p;
         document.getElementById('target-total').innerText = q > 0 ? q : '∞';
-        document.getElementById('pack-summary').innerText = n;
         renderFlavors(); showStep(2);
     }
 
@@ -220,28 +216,46 @@
         if (order.targetQty > 0 && total !== order.targetQty) return alert(`Select exactly ${order.targetQty} bags.`);
         if (total === 0) return alert('Select at least 1 bag.');
         if (order.pack === 'Custom Order') order.subtotal = total * 130;
-        showStep(3); calculateShipping();
+        showStep(3);
+    }
+
+    function updateMethods() {
+        const reg = document.getElementById('region').value;
+        const meth = document.getElementById('ship-method');
+        if (reg === 'ncr') {
+            meth.innerHTML = `<option value="std">J&T Pasig to NCR (1-2 Days)</option><option value="exp">Same-Day Express (Lalamove/Grab)</option>`;
+        } else {
+            meth.innerHTML = `<option value="std">J&T Provincial Standard</option>`;
+        }
+        calculateShipping();
     }
 
     function calculateShipping() {
         const reg = document.getElementById('region').value;
-        const meth = document.getElementById('ship-method');
-        if (reg === 'ncr') { meth.innerHTML = `<option value="std">J&T Pasig to NCR</option><option value="exp">Same-Day Express</option>`; } 
-        else { meth.innerHTML = `<option value="std">J&T Provincial</option>`; }
-        
+        const mVal = document.getElementById('ship-method').value;
         const sub = order.subtotal;
         let ship = 0, disc = 0;
+        
         const totalBags = Object.values(order.flavors).reduce((a, b) => a + b, 0);
         let weight = totalBags < 6 ? 1 : (totalBags < 12 ? 2.5 : 4.5);
 
         if (reg === 'ncr') {
-            if (meth.value === 'exp') { if (sub >= 650) disc = 50; } 
-            else { ship = weight === 1 ? 80 : (weight === 2.5 ? 120 : 180); if (sub >= 650) ship = 0; }
+            if (mVal === 'exp') {
+                if (sub >= 650) disc = 50; 
+                ship = 0; // Rider is paid cash
+            } else {
+                ship = weight === 1 ? 80 : (weight === 2.5 ? 120 : 180);
+                if (sub >= 650) ship = 0;
+            }
         } else {
             const rates = { luzon:[140,180,250], visayas:[180,220,350], mindanao:[195,240,370] };
             ship = rates[reg][weight === 1 ? 0 : (weight === 2.5 ? 1 : 2)];
             if (sub >= 3900) ship = 0; else if (sub >= 1300) disc = 150; else if (sub >= 650) disc = 100;
         }
+        
+        document.getElementById('sum-sub').innerText = `₱${sub}`;
+        document.getElementById('sum-ship').innerText = ship === 0 ? "FREE/CASH" : `₱${ship}`;
+        document.getElementById('sum-disc').innerText = `-₱${disc}`;
         document.getElementById('sum-total').innerText = `₱${sub + ship - disc}`;
     }
 
@@ -249,9 +263,11 @@
         if (!document.getElementById('fb-consent').checked) { document.getElementById('manual-modal').classList.remove('hidden'); return; }
         const name = document.getElementById('cust-name').value;
         if (!name || !document.getElementById('cust-phone').value) return alert('Fill in all details.');
+        
         let flavs = "";
         for (let f in order.flavors) if (order.flavors[f] > 0) flavs += `- ${f.replace(/([A-Z])/g, ' $1')}: ${order.flavors[f]}\n`;
-        const sum = `✨ SHATTER RESERVE ORDER ✨\n\n👤 NAME: ${name}\n📞 PHONE: ${document.getElementById('cust-phone').value}\n📍 ADDR: ${document.getElementById('cust-address').value}\n\n📦 ITEMS:\n${flavs}\n💰 TOTAL: ${document.getElementById('sum-total').innerText}`;
+        
+        const sum = `✨ SHATTER RESERVE ORDER ✨\n\n👤 NAME: ${name}\n📞 PHONE: ${document.getElementById('cust-phone').value}\n📍 ADDR: ${document.getElementById('cust-address').value}\n\n📦 ITEMS:\n${flavs}\n🚚 SHIP: ${document.getElementById('ship-method').options[document.getElementById('ship-method').selectedIndex].text}\n💰 TOTAL: ${document.getElementById('sum-total').innerText}`;
         window.location.href = `https://m.me/${fbID}?text=${encodeURIComponent(sum)}`;
     }
 
