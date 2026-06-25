@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shatter Reserve | Fine Mushroom Crisps</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --black: #0a0a0a;
+            --white: #ffffff;
+            --gray: #1a1a1a;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--gold);
+            background: rgba(0,0,0,0.9);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1590505660594-ad480a0bb9d6?q=80&w=2070&auto=format&fit=crop'); /* Placeholder background */
+            background-size: cover;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .cta-btn {
+            background-color: var(--gold);
+            color: var(--black);
+            padding: 15px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 2px;
+            display: inline-block;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: white;
+            transform: scale(1.05);
+        }
+
+        .section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: var(--gray);
+            padding: 30px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--gold);
+        }
+
+        .price {
+            font-size: 1.5rem;
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        .benefit-tag {
+            color: var(--gold);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+        }
+
+        .reseller-badge {
+            border: 2px dashed var(--gold);
+            padding: 10px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Shatter Reserve</div>
+</header>
+
+<section class="hero">
+    <h1>FINE MUSHROOM CRISPS</h1>
+    <p>Discover the natural elegance and wellness in every crunch.</p>
+    <a href="#menu" class="cta-btn">ORDER NOW</a>
+</section>
+
+<section class="section" id="menu">
+    <h2 style="text-align:center; font-family: 'Playfair Display'; color: var(--gold);">Our Signature Flavors</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Original</h3>
+            <p>The pure, earthy essence of Enoki.</p>
+            <p class="price">₱130</p>
+        </div>
+        <div class="card">
+            <h3>Barbeque</h3>
+            <p>Smoky, bold, and perfectly seasoned.</p>
+            <p class="price">₱130</p>
+        </div>
+        <div class="card">
+            <h3>Cheddar Sour Cream</h3>
+            <p>Savory cheese meets tangy cream.</p>
+            <p class="price">₱130</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: #111;">
+    <h2 style="text-align:center; font-family: 'Playfair Display'; color: var(--gold);">Wellness Benefits</h2>
+    <div class="grid">
+        <div class="card">
+            <span class="benefit-tag">Muscle Recovery</span>
+            <p>Rich in B-vitamins and Niacin to help convert nutrients into usable fuel.</p>
+        </div>
+        <div class="card">
+            <span class="benefit-tag">Immune Support</span>
+            <p>Packed with beta-glucans to strengthen your body's natural response.</p>
+        </div>
+        <div class="card">
+            <span class="benefit-tag">Sustained Energy</span>
+            <p>Structural dietary fiber ensures a slow release of energy without the crash.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2 style="text-align:center; font-family: 'Playfair Display'; color: var(--gold);">Reseller Program</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Tier 1: Starter</h3>
+            <p>10 + 1 FREE Bags</p>
+            <p class="price">₱900</p>
+            <div class="reseller-badge">Profit: ₱530</div>
+        </div>
+        <div class="card">
+            <h3>Tier 2: Growth</h3>
+            <p>25 Bags</p>
+            <p class="price">₱2,000</p>
+            <div class="reseller-badge">Profit: ₱1,250</div>
+        </div>
+        <div class="card" style="border-color: var(--gold);">
+            <h3>Tier 3: Distributor</h3>
+            <p>50 + 2 FREE Bags</p>
+            <p class="price">₱4,500</p>
+            <div class="reseller-badge">Profit: ₱2,260</div>
+        </div>
+    </div>
+    <div style="text-align:center; margin-top:30px;">
+        <a href="https://m.me/YOUR_FB_ID" class="cta-btn">MESSAGE TO JOIN</a>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 Shatter Reserve | Fine Mushroom Crisps by Andrew</p>
+    <p>Follow us on Facebook & Instagram @shatterreserve</p>
+</footer>
+
+</body>
+</html>
